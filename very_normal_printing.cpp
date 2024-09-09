@@ -21,7 +21,7 @@
 void print(const char *str) {
 #ifdef PLATFORM_WINDOWS
     // test
-    DWORD written;
+    DWORD written; // https://stackoverflow.com/questions/2995251/why-in-c-do-we-use-dword-rather-than-unsigned-int - Windows being Windows moment
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     WriteFile(hConsole, str, strlen(str), &written, NULL); // From windows.h : https://stackoverflow.com/questions/9174947/writefile-function-c
 #elif defined(PLATFORM_UNIX)
