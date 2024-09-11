@@ -1,0 +1,1 @@
+This year is my first year of university and every student must take an introductory programming class; even though I know how to code, I don't want to just mess around and end up eventually falling behind, so this is just a dump of some files I wrote while trying to engage with the material.
