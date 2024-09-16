@@ -63,14 +63,9 @@ int main() {
 
     print(12345);
     print("\n");
-    print(-67890);
-    print("\n");
 
     print("And floats.\n");
     print(3.14159f); 
-    print("\n");
-    print(2.71828f, 5);
-    print("\n");
 
     print("I don't like iterating over arrays, because I am lazy, so it can also do that.\n ");
 
@@ -79,6 +74,8 @@ int main() {
 
     print(intArray, 5);
     print(floatArray, 3);
+
+    print("But that's probably more than five messages :p\n")
     
     return 0;
 }
