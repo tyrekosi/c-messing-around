@@ -90,6 +90,8 @@ void print(const char *str, const char* color = nullptr) {
 #endif
 }
 
+// Using stream for these to keep it more consistent
+// Since I need it for some but for others it technically could be skipped
 void print(int num, const char* color = nullptr) {
     std::ostringstream stream;
     stream << num;
