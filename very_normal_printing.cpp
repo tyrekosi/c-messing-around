@@ -23,6 +23,7 @@
 #endif
 
 #ifdef PLATFORM_WINDOWS
+// Windows my enemy
 enum ConsoleColor {
     BLACK = 0,
     BLUE = 1,
@@ -43,6 +44,7 @@ void setColor(ConsoleColor color) {
     SetConsoleTextAttribute(hConsole, color);
 }
 #elif defined(PLATFORM_UNIX)
+// ANSI
 const char* BLACK = "\033[0;30m";
 const char* RED = "\033[0;31m";
 const char* GREEN = "\033[0;32m";
@@ -57,15 +59,16 @@ const char* BRIGHT_YELLOW = "\033[1;33m";
 const char* BRIGHT_CYAN = "\033[1;36m";
 
 void setColor(const char* colorCode) {
-    print(colorCode);
+    write(STDOUT_FILENO, colorCode, strlen(colorCode));
 }
 #endif
 
+// Moved due to compiler issue
 void resetColor() {
 #ifdef PLATFORM_WINDOWS
-    setColor(WHITE); 
+    setColor(WHITE);
 #elif defined(PLATFORM_UNIX)
-    print("\033[0m");
+    write(STDOUT_FILENO, "\033[0m", 4);
 #endif
 }
 
